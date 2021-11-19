@@ -220,7 +220,7 @@ class Block(nn.Module):
 
         return x
 
-class ViT(nn.Module):
+class VisionTransformer(nn.Module):
     """
     Vision transformers 
 
@@ -256,7 +256,7 @@ class ViT(nn.Module):
 
     norm : nn.LayerNorm 
     """
-    def __init__(self, img_size, patch_size, in_chan, n_classes, dims, depth, n_heads, mlp_ratio, qkb_bias=True, p=0., attn_p=0.) -> None:
+    def __init__(self, img_size, patch_size, in_chan, n_classes, dims, depth, n_heads, mlp_ratio, qkv_bias=True, p=0., attn_p=0.) -> None:
         super().__init__()
         self.patch_embed = PatchEmbed(img_size, patch_size, in_chan, embed_size=dims)
 
